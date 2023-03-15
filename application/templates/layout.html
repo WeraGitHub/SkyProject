@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}} page</title>
-  <link rel="stylesheet" href="{{  url_for('static', filename='styles.css')}}" >
+  <link rel="stylesheet" href="{{  url_for('static', filename='styles.css') }}" >
 </head>
 <body>
+
 <header>
     <nav>
         <ul>
@@ -17,11 +18,15 @@
             </li>
         </ul>
     </nav>
+    <hr>
 </header>
 
   <h1>{{title}} Page</h1>
 
   {% block body_content %} {% endblock %}
-
+<hr>
 </body>
+<footer>
+    <p>Sky 2023 footer</p>
+</footer>
 </html>
