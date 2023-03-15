@@ -29,3 +29,8 @@ def practice():
 @app.route('/about')
 def about():
     return render_template('about.html', title="About")
+
+
+@app.route('/favourite')
+def favourite():
+    return render_template('favourite.html', title="Favourite", list_of_things=['chocolate', 'dogs', 'sunsets'])
