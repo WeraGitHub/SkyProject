@@ -71,7 +71,7 @@ svg {
 
 
 /* The custom styling starts here */
-html {
+body {
     background-color: rgb(9, 17, 83);
     font-family: sans-serif;
     color: white;
