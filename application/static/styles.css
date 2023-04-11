@@ -1,81 +1,258 @@
-/*
-CSS RESET
-inspired by KEvin Powell and Andy Bell https://andy-bell.co.uk/a-modern-css-reset/
-*/
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
 * {
-  margin: 0;
-  padding:0;
-  font:inherit;
+    margin: 0;
+    padding: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-html,
 body {
-  height: 100%;
+    background-color: white;
+    font-family: 'Lato', Arial, sans-serif;
 }
 
-/* Set core body defaults */
-body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+/* ############################################# */
+/* home page styles */
+
+/* home page styles - all screens including small like phones */
+.main-section-homepage {
+    background-color: white;
+    color: #565656;
+    width: 100%;
+    margin-top: 100px;
+    padding: 80px 0;
+    text-align: center;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+.main-section-homepage a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Make images easier to work with */
-img,
-picture
-svg {
-  max-width: 100%;
+.main-section-homepage h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.main-section-homepage h2 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.main-section-homepage h2 a:hover {
+    text-decoration: underline;
+}
+
+
+.main-section-homepage-logos {
+    margin-top: 120px;
+}
+
+/* home page styles - just big screens over 1024px - like laptops */
+@media only screen and (min-width: 1024px) {
+    .main-section-homepage {
+        padding-bottom: 35px;
+        margin-top: 80px;
+    }
+
+    .main-section-homepage h1 {
+        font-size: 60px;
+        margin-bottom: 40px;
+    }
+
+    .main-section-homepage h2 {
+        font-size: 30px;
+        display: inline;
+        padding: 0 15px;
+    }
+
+    .main-section-homepage-logos {
+        margin-top: 200px;
+    }
+}
+
+
+/* ############################################# */
+/* layout file css */
+
+/* layout file css - all screens including small like phones */
+.rainbow{
+    background: linear-gradient(to right, #FD9F00, #FB1700, #9E0C81, #0171FD);
+}
+
+.strip{
+    height: 10px;
+}
+
+.mobile-nav {
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  position: relative;
+  text-align: center;
+
+}
+
+.mobile-nav .bits-name {
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.mobile-nav #myLinks {
+  display: none;
+  height: 100vh;
+}
+
+.mobile-nav a {
+  color: #565656;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 40px;
   display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav a.icon {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 30px;
+}
+
+.mobile-nav a:hover {
+  color: black;
+}
+
+.desktop-nav {
+    display: none;
 }
 
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
+.divider {
+    position: relative;
+    background: linear-gradient(90deg,hsla(0,0%,75%,0),silver,hsla(0,0%,75%,0));
+    height: 1px;
+    border: solid transparent;
+    border-width: 0 0 1px;
+}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.content-container {
+    min-height: 100vh;
+}
+
+.content-container .title {
+    text-align: center;
+    letter-spacing: 0.7px;
+}
+
+.content-container .title h1{
+    padding: 50px 0;
+    font-weight:400;
+    font-size: 40px;
 }
 
 
-/* The custom styling starts here */
-body {
-    background-color: rgb(9, 17, 83);
-    font-family: sans-serif;
-    color: white;
+/* layout file css - just big screens over 1024px - like laptops */
+@media only screen and (min-width: 1024px) {
+    .mobile-nav {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: block;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style-type: none;
+        margin: 0;
+        width: 100%;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .desktop-nav .nav-list-element {
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .desktop-nav .nav-list-element:last-child {
+        margin-left: auto;
+        padding-right: 2rem;
+    }
+
+    .desktop-nav .nav-list-element a {
+        color: #565656;
+        font-size: 20px;
+        text-decoration: none;
+        padding-left: 20px;
+    }
+
+    .desktop-nav .nav-list-element:first-child a {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .desktop-nav .nav-list-element a:hover {
+        color: black;
+    }
+
 }
-a {
-    color: white;
+
+
+
+
+
+/* ############################################# */
+/* the rest */
+
+.rainbow-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    color: #4a4a4a;
+    background-image: -webkit-linear-gradient(left,#ff9e00,red 35%,#b5007d 60%,#21429c 85%,#0071ff);
+    background-size: 100%;
+}
+
+
+
+.weather-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weather-card {
+    margin: 25px;
+    padding: 0;
+    border-radius: 20px;
+    width: 300px;
+    background-color: lightblue;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.weather-card-location {
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    height: 60px;
+    position: relative
+}
+.weather-card-temperature {
+    margin: 0;
+    text-align: center;
+    height: 60px;
+    position: relative
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>{{title}} page</title>
-  <link rel="stylesheet" href="{{  url_for('static', filename='styles.css') }}" >
+    <title>{{title}}</title>
+    <!--    fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--    our stylesheets  -->
+    <link rel="stylesheet" href="{{  url_for('static', filename='styles.css') }}" >
 </head>
+
 <body>
 
-<header>
-    <img src="{{  url_for('static', filename='sky-logo.png') }}" alt="Girl in a jacket" width="100" height="auto">
-    <nav>
-        <ul>
-            <li>
-                <a href="/home">Home</a>
-            </li>
-            <li>
-                <a href="/about">About</a>
-            </li>
-        </ul>
-    </nav>
-    <hr>
-</header>
+    <header>
+        <div class="rainbow strip"></div>
 
-  <h1>{{title}} Page</h1>
+        <!-- Top Navigation Menu for small screens like mobiles -->
+        <nav class="mobile-nav">
+          <a href="/" class="bits-name">Bits_please</a>
+          <div id="myLinks">
+              <hr class="divider">
+            <a href="/about">About</a>
+            <a href="/weather">WeatherApp</a>
+            <a href="https://www.skygroup.sky/" target="_blank">
+                <img src="{{  url_for('static', filename='sky-logo.png') }}" alt="Sky logo" height="50" width="auto">
+            </a>
+            <a href="https://www.qa.com/" target="_blank">
+                <img src="{{  url_for('static', filename='qa-logo.jpg') }}" alt="QA logo" height="45" width="auto">
+            </a>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Open navigation menu" aria-expanded="false">
+              <img src="{{  url_for('static', filename='burger.jpg') }}" alt="menu burger image" width="40" height="auto">
+          </a>
+        </nav>
 
-  {% block body_content %} {% endblock %}
-<hr>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
+
+        <nav class="desktop-nav">
+            <ul>
+                <li class="nav-list-element">
+                    <a href="/" class="bits-name">Bits_please</a>
+                </li>
+                <li class="nav-list-element">
+                    <a href="/about">About</a>
+                </li>
+                <li class="nav-list-element">
+                    <a href="/weather">WeatherApp</a>
+                </li>
+                <li class="nav-list-element">
+                    <a href="https://www.skygroup.sky/" target="_blank">
+                        <img src="{{  url_for('static', filename='sky-logo.png') }}" alt="Sky logo" height="40" width="auto">
+                    </a>
+                    <a href="https://www.qa.com/" target="_blank">
+                        <img src="{{  url_for('static', filename='qa-logo.jpg') }}" alt="QA logo" height="38" width="auto">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <hr class="divider">
+
+    </header>
+
+
+
+    <div class="content-container">
+
+
+        {% block body_content %}
+        {% endblock %}
+
+
+    </div>
+
 </body>
-<footer>
-    <p>Sky 2023 footer</p>
-</footer>
+
 </html>
