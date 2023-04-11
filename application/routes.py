@@ -7,6 +7,7 @@ from application import app
 @app.route('/index')
 def home():
     title_name = "Home"
+    var = ""
     return render_template('home.html', title=title_name)
 
 
