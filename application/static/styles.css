@@ -13,12 +13,24 @@ body {
 
 /* home page styles - all screens including small like phones */
 .main-section-homepage {
-    background-color: white;
-    color: #565656;
-    width: 100%;
-    margin-top: 100px;
-    padding: 80px 0;
-    text-align: center;
+  background-image: url("/static/sky-hero.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+    padding-top: 10%;
+  text-align: center;
+}
+
+.main-section-homepage .hero-text-box {
+  text-align: center;
+  width: fit-content;
+  background-color: white;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 20px;
+  color: #565656;
 }
 
 .main-section-homepage a {
@@ -42,18 +54,8 @@ body {
     text-decoration: underline;
 }
 
-
-.main-section-homepage-logos {
-    margin-top: 120px;
-}
-
 /* home page styles - just big screens over 1024px - like laptops */
 @media only screen and (min-width: 1024px) {
-    .main-section-homepage {
-        padding-bottom: 35px;
-        margin-top: 80px;
-    }
-
     .main-section-homepage h1 {
         font-size: 60px;
         margin-bottom: 40px;
@@ -63,10 +65,6 @@ body {
         font-size: 30px;
         display: inline;
         padding: 0 15px;
-    }
-
-    .main-section-homepage-logos {
-        margin-top: 200px;
     }
 }
 
@@ -201,8 +199,6 @@ body {
     }
 
 }
-
-
 
 
 
