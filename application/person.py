@@ -71,7 +71,7 @@ class Person:
 
     def information(self):
         information = self.firstname + " is an amazing human. " + "His/Her favourite colour is " + self.fav_color + \
-                      ". Every year they celebrate birthdays on " + self.birthday() + "."
+                      ". Every year they celebrate their birthday on " + self.birthday() + "."
         return information
 
     @classmethod

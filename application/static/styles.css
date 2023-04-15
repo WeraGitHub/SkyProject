@@ -230,6 +230,7 @@ body {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .weather-card-location {
     margin: 0;
     text-align: center;
@@ -237,6 +238,7 @@ body {
     height: 60px;
     position: relative
 }
+
 .weather-card-temperature {
     margin: 0;
     text-align: center;
@@ -244,11 +246,40 @@ body {
     position: relative
 }
 
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.main-about {
+    text-align: center;
+    color: #565656;
+}
+
+.main-about h2 {
+    padding: 60px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+.main-about h3 {
+    padding-bottom: 50px;
+}
+
+.main-about p {
+    padding: 25px;
+}
+
+.main-about .people-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+.main-about .person-card {
+    width: 250px;
+}
+
+.main-about .person-card img {
+    background: lightblue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -20px;
 }

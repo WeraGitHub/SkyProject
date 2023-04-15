@@ -9,13 +9,13 @@
 </div>
 
 <main class="main-about">
-	<h2>About Project</h2>
-	<p>this is a lovely project</p>
+	<h2>This project was developed during my DevOps course with Sky.<br>This is a Flask web application that uses the OpenWeather API to display weather forecasts for cities around the world.<br>Here I'm demonstrating my skills in object orientation and use of API as well as the front end skills like css, javascript and html.</h2>
 
-	<h2>Project Contributors</h2>
+	<h3>Little Bit About Project Contributors:</h3>
 	<div class="people-cards">
 		{%  for person in people  %}
 		<div class="person-card">
+			<p><img src="{{  url_for('static', filename='happy.jpg') }}"></p>
 			<p>{{ person.information() }}</p>
 		</div>
 		{% endfor %}
