@@ -1,6 +1,10 @@
+from datetime import datetime
+
 from flask import render_template
 from application import app
 import requests
+
+from application.person import Person
 
 
 @app.route('/')
@@ -13,12 +17,17 @@ def home():
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title="About us and our project")
+    person_a = Person('Person A', 'Surname-A', datetime(1981, 1, 10), "blue")
+    person_b = Person('Person B', 'Surname-B', datetime(1991, 2, 11), "green")
+    person_c = Person('Person C', 'Surname-C', datetime(1989, 3, 12), "yellow")
+    person_d = Person('Person D', 'Surname-D', datetime(1993, 4, 13), "black")
+    people = [person_a, person_b, person_c, person_d]
+    return render_template('about.html', title="About us and our project", people=people)
 
 
 @app.route('/weather', methods=["GET"])
-def weather_w():
-    weather_data = get_weather(['Three Legged Cross', 'Romford', 'Limassol'])
+def weather():
+    weather_data = get_weather(['Three Legged Cross', 'Isleworth', 'Chilworth'])
     return render_template('weather.html', title="Weather App", weather_data=weather_data)
 
 
