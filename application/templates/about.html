@@ -8,6 +8,17 @@
     <hr class="divider">
 </div>
 
-<p>Lovely about page</p>
+<main class="main-about">
+	<h2>About Project</h2>
+	<p>this is a lovely project</p>
 
-{% endblock %}
+	<h2>Project Contributors</h2>
+	<div class="people-cards">
+		{%  for person in people  %}
+		<div class="person-card">
+			<p>{{ person.information() }}</p>
+		</div>
+		{% endfor %}
+	</div>
+	{% endblock %}
+</main>
