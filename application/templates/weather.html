@@ -7,40 +7,39 @@
     <hr class="divider">
 </div>
 
-<h2>Welcome to weather application</h2>
+<main class="main-weather">
 
-<div>
+	<h2>Get weather details of any place around the world.</h2>
+
 	<div>
-		<p>Get weather details of any city around the world.</p>
-		<label for="location">Enter a city:</label>
-		<input type="text" id="location" placeholder="location" required>
-		<button id="get-weather-btn">Get weather</button>
+		<input type="text" id="location" placeholder="Location" required>
+		<br>
+		<button id="get-weather-btn" class="rainbow">GO</button>
 		<div id="weather-info"></div>
 	</div>
-</div>
 
+	<hr class="divider">
 
+	<h2>Sample weather locations:</h2>
 
-<h2>Our weathers</h2>
-<div class="weather-cards">
-	{%  for location in weather_data  %}
-	<div class="weather-card">
-		<div class="weather-card-location">
-			<div class="center">
-				<p>{{ location.name }}</p>
+	<div class="weather-cards">
+		{%  for location in weather_data  %}
+		<div class="weather-card" style="margin-bottom: 100px;">
+			<div class="weather-card-location">
+				<div class="center">
+					<p>{{ location.name }}</p>
+				</div>
 			</div>
-		</div>
-		<div class="weather-card-temperature">
-			<div class="center">
+			<div class="weather-card-temperature">
 				<img src="http://openweathermap.org/img/w/{{ location.weather[0].icon }}.png" alt="{{ location.weather[0].description }}">
-				<p>{{ (location.main.temp - 273.15)|int }}°C - {{ location.weather[0].description }}</p>
+				<p>{{ (location.main.temp - 273.15)|int }}°C</p>
+				<p>{{ location.weather[0].description }}</p>
 			</div>
 		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
-</div>
 
-<script>
+	<script>
       const apiKey = '03cf0108f3a426eceaf55fd80047b8ef';
       const getWeatherBtn = document.getElementById('get-weather-btn');
       const locationInput = document.getElementById('location');
@@ -54,13 +53,14 @@
           .then(response => response.json())
           .then(data => {
             if (data.cod === '404') {
-              weatherInfo.innerHTML = 'City not found';
+              weatherInfo.innerHTML = '<spam class="rainbow-text">Location not found, please try again</spam>';
             } else {
               const temperature = data.main.temp;
               const description = data.weather[0].description;
               const icon = data.weather[0].icon;
 
               weatherInfo.innerHTML = `
+              <div class="weather-cards">
 					<div class="weather-card">
 						<div class="weather-card-location">
 							<div class="center">
@@ -68,11 +68,12 @@
 							</div>
 						</div>
 						<div class="weather-card-temperature">
-							<div class="center">
-								<p><img src="http://openweathermap.org/img/w/${icon}.png" alt="${description}"> ${temperature}&deg;C - ${description}</p>
-							</div>
+							<img src="http://openweathermap.org/img/w/${icon}.png" alt="${description}">
+							<p>${temperature}&deg;C</p>
+							<p>${description}</p>
 						</div>
 					</div>
+			  </div>
               `;
             }
           })
@@ -82,4 +83,5 @@
           });
       });
     </script>
+</main>
 {% endblock %}
