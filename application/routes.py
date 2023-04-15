@@ -6,6 +6,10 @@ import requests
 
 from application.person import Person
 
+# Define global variables
+# WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', 'default_key')
+WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
+
 
 @app.route('/')
 @app.route('/home')
@@ -33,8 +37,7 @@ def weather():
 def get_weather(locations):
     weather_data_list = []
     for location in locations:
-        weather_api_key = '03cf0108f3a426eceaf55fd80047b8ef'
-        url = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + weather_api_key
+        url = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + WEATHER_API_KEY
         try:
             weather_data = requests.get(url).json()
         except requests.exceptions.RequestException as e:
