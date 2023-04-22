@@ -39,3 +39,7 @@ Navigate to the Weather page within this application.
 Enter a city name in the search bar and click "Search".
 The current weather conditions and a five-day forecast will be displayed.
 
+
+# Deployment
+## AWS, Jenkins and Docker
+
