@@ -1,6 +1,9 @@
 # Use an official Python runtime as a parent image
 FROM python:3
 
+# Introduce maintainer of this document
+MAINTAINER Weronika "weronikalimberger@gmail.com"
+
 # Set the working directory to /app
 WORKDIR /app
 
