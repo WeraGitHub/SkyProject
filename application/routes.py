@@ -45,3 +45,9 @@ def get_weather(locations):
             weather_data = {}
         weather_data_list.append(weather_data)
     return weather_data_list
+
+
+@app.route('/pipes')
+def pipes():
+    title_name = "Pipelines"
+    return render_template('pipes.html', title=title_name)
