@@ -49,5 +49,5 @@ def get_weather(locations):
 
 @app.route('/pipes')
 def pipes():
-    title_name = "Pipelines"
+    title_name = "DevOps"
     return render_template('pipes.html', title=title_name)

@@ -2,12 +2,36 @@
 
 {% block body_content %}
 
-<div class="title">
-    <h1 class="rainbow-text">{{title}}</h1>
-    <hr class="divider">
+<div class="hub-body">
+
+    <div class="title">
+        <h1 class="rainbow-text">{{title}}</h1>
+        <hr class="divider">
+    </div>
+
+
+    <div class="slide">
+        <h2>Dev Ops culture and tools</h2>
+        <img src="{{  url_for('static', filename='slide.jpg') }}" alt="Slide">
+     </div>
+
+    <div class="slide">
+        <h2>Overview of Our Pipeline</h2>
+        <img src="{{  url_for('static', filename='pipe_slide.jpg') }}" alt="Slide" >
+    </div>
+
+    <div class="slide">
+        <h2>CI/CD Tutorial</h2>
+        <video controls>
+            <source src="{{  url_for('static', filename='DockerfileWebhookScriptedPipeline.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+
+
 </div>
 
 
 {% endblock %}
+
 
 

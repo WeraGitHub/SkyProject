@@ -309,3 +309,25 @@ body {
 .weather-card-temperature {
     text-align: center;
 }
+
+.hub-body {
+    text-align: center;
+}
+
+.hub-body h1 {
+    padding: 60px;
+}
+
+.hub-body .slide {
+    margin: 40px auto;
+    padding: 50px;
+    max-width: 1000px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.hub-body .slide img, .hub-body .slide video{
+    width: 95%;
+    height: auto;
+    margin-top: 30px;
+}
+
