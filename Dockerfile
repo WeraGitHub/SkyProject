@@ -12,9 +12,6 @@ COPY . .
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install pytest and pytest-flask
-RUN pip install pytest pytest-flask
-
 # Set Flask environment to production
 ENV FLASK_ENV=production
 
