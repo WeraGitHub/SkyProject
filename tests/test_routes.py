@@ -27,4 +27,4 @@ def test_get_weather():
 def test_pipes():
     response = client.get('/')
     assert response.status_code == 200
-    assert b'Pipelines' in response.data
+    assert b'CI/CD' in response.data
