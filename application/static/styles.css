@@ -323,10 +323,11 @@ body {
     padding: 50px;
     max-width: 1000px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #565656;
 }
 
 .hub-body .slide img, .hub-body .slide video{
-    width: 95%;
+    width: 90%;
     height: auto;
     margin-top: 30px;
 }
