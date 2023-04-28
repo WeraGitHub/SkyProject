@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = "sky-project-image"
         DOCKER_CONTAINER_NAME = "sky-project-container"
+        WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
     }
 
     stages {

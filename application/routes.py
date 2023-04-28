@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 from flask import render_template
@@ -7,9 +8,9 @@ import requests
 from application.person import Person
 
 # Define global variables
-# WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', 'default_key')
+WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', 'default_key')
 # print(WEATHER_API_KEY)
-WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
+# WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
 
 
 @app.route('/')
