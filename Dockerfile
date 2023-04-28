@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3
+FROM python:3.11-slim
 
 # Introduce maintainer of this document
 MAINTAINER Weronika "weronikalimberger@gmail.com"
