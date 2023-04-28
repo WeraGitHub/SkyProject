@@ -33,7 +33,7 @@ pipeline {
                     sh 'pip install requests'
                     sh 'python -m pytest tests/'
                 }
-                echo 'Testing is done now.'
+                echo 'Testing. done..'
             }
         }
         stage('Deploy') {
