@@ -41,6 +41,7 @@ The current weather conditions and a five-day forecast will be displayed.
 
 
 # CI/CD
+### for video step by step tutorials go to the DevOps section of this web application
 ## AWS, Jenkins and Docker
 
 ### AWS - create and connect to an EC2 instance
