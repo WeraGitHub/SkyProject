@@ -12,6 +12,8 @@ from application.person import Person
 # WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', 'default_key')
 
 WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
+# In order to run and use this application you should generate your own OpenWeather API key.
+# You can get a free API key by signing up here: https://openweathermap.org/
 
 
 @app.route('/')
