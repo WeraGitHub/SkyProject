@@ -148,7 +148,7 @@ Navigate to Settings -> Webhook -> Add webhook
 
 In Payload URL paste:
 
-http:// <your public IP here> :8080/github-webhook/ 
+http://*your public IP here*:8080/github-webhook/ 
 
 In content type application/x-www-form…
 
