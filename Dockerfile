@@ -15,9 +15,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Set Flask environment to production
 ENV FLASK_ENV=production
 
-# Set OpenWeather API key variable
-ENV WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
-
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 

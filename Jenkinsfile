@@ -43,7 +43,7 @@ pipeline {
                 sh 'docker stop $DOCKER_CONTAINER_NAME || true'
                 sh 'docker rm $DOCKER_CONTAINER_NAME || true'
                 echo 'run the container'
-                sh 'docker run --name $DOCKER_CONTAINER_NAME -d -p 5000:5000 $DOCKER_IMAGE_NAME'
+                sh 'docker run --name $DOCKER_CONTAINER_NAME -e "WEATHER_API_KEY=03cf0108f3a426eceaf55fd80047b8ef" -d -p 5000:5000 $DOCKER_IMAGE_NAME'
                 echo 'Deployed <3'
             }
         }
