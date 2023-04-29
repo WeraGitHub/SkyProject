@@ -1,5 +1,5 @@
 # Weather Application
-## developed during my DevOps course with Sky
+## Developed during my DevOps programme with Sky and QA
 #### This is a Flask web application that uses the OpenWeather API to display weather forecasts for cities around the world.
 
 
@@ -27,6 +27,8 @@ Requests
 `pip install -r requirements.txt`
 
 4. You should generate your own OpenWeather API key in order to use this application. You can get a free API key by signing up here. https://openweathermap.org/
+    Once you have your key, paste it in the routes.py file - line 14
+    `WEATHER_API_KEY = 'your key here!'`
 
 5. Start the application:
 `python app.py`
@@ -41,15 +43,15 @@ The current weather conditions and a five-day forecast will be displayed.
 
 
 # CI/CD
-### for video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder
 ## AWS, Jenkins and Docker
+### For my video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder
 
-### AWS - create and connect to an EC2 instance
+### 1. AWS - create and connect to an EC2 instance
 Create your ec2 instance with the elastic IP address and right security group
 
-### Connect to your instance via SSH
+### 2. Connect to your instance via SSH
 
-### Install Jenkins
+### 3. Install Jenkins
 
 `sudo yum update -y`
 
@@ -72,16 +74,25 @@ Create your ec2 instance with the elastic IP address and right security group
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
 
-Browse to your PublicIP:8080 to unlock Jenkins
-Then install suggested plugins
+Browse to your PublicIP:8080 to unlock Jenkins and enter the initialAdminPassword you copied from the terminal.
+
+Next install suggested plugins.
+
 Then create first admin user with the following values:
+
 Username: jenkinsadmin
+
 Password: ***
+
 Confirm password: ***
+
 Fullname: jenkinsadmin
+
 Email: jenkins@jenkins.com
 
-###	Install Docker
+
+
+###	4. Install Docker
 
 `sudo yum -y install docker`
 
@@ -96,14 +107,14 @@ Email: jenkins@jenkins.com
 Make sure you restart your ssh connection after that.
 
 
-### Add jenkins to a docker group
+### 5. Add jenkins to a docker group
 
 `sudo usermod -aG docker jenkins`
 
 `sudo systemctl restart jenkins`
 
 
-###	Create and add Dockerfile to your project stored on GitHub
+###	6. Create and add Dockerfile to your project stored on GitHub
 Dockerfile content:
 
 ```
@@ -140,7 +151,7 @@ if __name__ == "__main__":
 ```
 
 
-### Create a webhook in Github
+### 7. Create GitHub webhook
 
 Copy public IP of your instance
 
@@ -164,7 +175,7 @@ And click *Add webhook*
 
 
 
-### Create Pipeline in Jenkins
+### 8. Create Pipeline in Jenkins
 Make sure you have downloaded 'Pyenv Pipeline' plugin in your Jenkins (https://plugins.jenkins.io/pyenv-pipeline)
 Your Jenkinsfile has this content:
 ```
@@ -235,4 +246,4 @@ Our web app should be now available on http://*your-public-IP-here*:5000
 
 
 
-# 	:tada:	:tada:	:tada:  Done :) 	:tada: 	:tada: 	:tada:
+### 9.	:tada:	:tada:	:tada:  Enjoy 	:tada: 	:tada: 	:tada:
