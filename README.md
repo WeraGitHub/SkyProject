@@ -1,5 +1,5 @@
 # Weather Application
-## developed during my DevOps course with Sky
+## Developed during my DevOps programme with Sky and QA
 #### This is a Flask web application that uses the OpenWeather API to display weather forecasts for cities around the world.
 
 
@@ -40,16 +40,16 @@ Enter a city name in the search bar and click "Search".
 The current weather conditions and a five-day forecast will be displayed.
 
 
-# CI/CD
-### for video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder
+# CI/CD Pipeline
 ## AWS, Jenkins and Docker
+### For my video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder'
 
-### AWS - create and connect to an EC2 instance
+### 1. AWS - create and connect to an EC2 instance
 Create your ec2 instance with the elastic IP address and right security group
 
-### Connect to your instance via SSH
+### 2. Connect to your instance via SSH
 
-### Install Jenkins
+### 3. Install Jenkins
 
 `sudo yum update -y`
 
@@ -81,7 +81,7 @@ Confirm password: ***
 Fullname: jenkinsadmin
 Email: jenkins@jenkins.com
 
-###	Install Docker
+###	4. Install Docker
 
 `sudo yum -y install docker`
 
@@ -96,14 +96,14 @@ Email: jenkins@jenkins.com
 Make sure you restart your ssh connection after that.
 
 
-### Add jenkins to a docker group
+### 5. Add jenkins to a docker group
 
 `sudo usermod -aG docker jenkins`
 
 `sudo systemctl restart jenkins`
 
 
-###	Create and add Dockerfile to your project stored on GitHub
+###	6. Create and add Dockerfile to your project stored on GitHub
 Dockerfile content:
 
 ```
@@ -140,9 +140,9 @@ if __name__ == "__main__":
 ```
 
 
-### Create a webhook in Github
+### 7. Create GitHub webhook
 
-Copy public IP of your instance
+Copy public IP of your aws EC2 instance.
 
 Navigate to Settings -> Webhook -> Add webhook
 
@@ -164,7 +164,7 @@ And click *Add webhook*
 
 
 
-### Create Pipeline in Jenkins
+### 8. Create Pipeline in Jenkins
 Make sure you have downloaded 'Pyenv Pipeline' plugin in your Jenkins (https://plugins.jenkins.io/pyenv-pipeline)
 Your Jenkinsfile has this content:
 ```
@@ -230,6 +230,4 @@ And now back in Jenkins:
 
 Our web app should be now available on http://*your-public-IP-here*:5000 
 
-
-
-# 	:tada:	:tada:	:tada:  Done :) 	:tada: 	:tada: 	:tada:
+### 9. :tada:	:tada:	:tada:  Enjoy	:tada: 	:tada: 	:tada:
