@@ -16,6 +16,9 @@ Flask
 Requests
 
 
+### IMPORTANT - In order to run and use this application you should generate your own OpenWeather API key. You can get a free API key by signing up here: https://openweathermap.org/
+
+
 ### Getting started - locally
 1. Clone the repository:
 `git clone https://github.com/WeraGitHub/bits_please_project.git`
@@ -26,8 +29,7 @@ Requests
 3. Install the required packages:
 `pip install -r requirements.txt`
 
-4. You should generate your own OpenWeather API key in order to use this application. You can get a free API key by signing up here. https://openweathermap.org/
-    Once you have your key, paste it in the routes.py file - line 14
+4. Once you have your OpenWeather API key, paste it in the routes.py file - line 14
     `WEATHER_API_KEY = 'your key here!'`
 
 5. Start the application:
