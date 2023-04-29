@@ -1,5 +1,5 @@
 # Weather Application
-## Developed during my DevOps programme with Sky and QA
+## developed during my DevOps course with Sky
 #### This is a Flask web application that uses the OpenWeather API to display weather forecasts for cities around the world.
 
 
@@ -40,16 +40,16 @@ Enter a city name in the search bar and click "Search".
 The current weather conditions and a five-day forecast will be displayed.
 
 
-# CI/CD Pipeline
+# CI/CD
+### for video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder
 ## AWS, Jenkins and Docker
-### For my video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder'
 
-### 1. AWS - create and connect to an EC2 instance
+### AWS - create and connect to an EC2 instance
 Create your ec2 instance with the elastic IP address and right security group
 
-### 2. Connect to your instance via SSH
+### Connect to your instance via SSH
 
-### 3. Install Jenkins
+### Install Jenkins
 
 `sudo yum update -y`
 
@@ -81,7 +81,7 @@ Confirm password: ***
 Fullname: jenkinsadmin
 Email: jenkins@jenkins.com
 
-###	4. Install Docker
+###	Install Docker
 
 `sudo yum -y install docker`
 
@@ -96,19 +96,19 @@ Email: jenkins@jenkins.com
 Make sure you restart your ssh connection after that.
 
 
-### 5. Add jenkins to a docker group
+### Add jenkins to a docker group
 
 `sudo usermod -aG docker jenkins`
 
 `sudo systemctl restart jenkins`
 
 
-###	6. Create and add Dockerfile to your project stored on GitHub
+###	Create and add Dockerfile to your project stored on GitHub
 Dockerfile content:
 
 ```
 # Use an official Python runtime as a parent image
-FROM python:3
+FROM python:3.11-slim
 
 # Introduce maintainer of this document
 MAINTAINER Weronika "weronikalimberger@gmail.com"
@@ -140,9 +140,9 @@ if __name__ == "__main__":
 ```
 
 
-### 7. Create GitHub webhook
+### Create a webhook in Github
 
-Copy public IP of your aws EC2 instance.
+Copy public IP of your instance
 
 Navigate to Settings -> Webhook -> Add webhook
 
@@ -164,7 +164,7 @@ And click *Add webhook*
 
 
 
-### 8. Create Pipeline in Jenkins
+### Create Pipeline in Jenkins
 Make sure you have downloaded 'Pyenv Pipeline' plugin in your Jenkins (https://plugins.jenkins.io/pyenv-pipeline)
 Your Jenkinsfile has this content:
 ```
@@ -203,7 +203,7 @@ pipeline {
                     sh 'pip install requests'
                     sh 'python -m pytest tests/'
                 }
-                echo 'Testing is done now.'
+                echo 'Testing. done..'
             }
         }
         stage('Deploy') {
@@ -214,6 +214,9 @@ pipeline {
                 sh 'docker rm $DOCKER_CONTAINER_NAME || true'
                 echo 'run the container'
                 sh 'docker run --name $DOCKER_CONTAINER_NAME -d -p 5000:5000 $DOCKER_IMAGE_NAME'
+                // to pass environment variable -API key here- we would include flag -e and the key value pair in quotation marks
+                // ideally we would be passing a SECRET rather than hardcoded value here
+                // sh 'docker run --name $DOCKER_CONTAINER_NAME -e "WEATHER_API_KEY=03cf0108f3a426eceaf55fd80047b8ef" -d -p 5000:5000 $DOCKER_IMAGE_NAME'
                 echo 'Deployed <3'
             }
         }
@@ -230,4 +233,6 @@ And now back in Jenkins:
 
 Our web app should be now available on http://*your-public-IP-here*:5000 
 
-### 9. :tada:	:tada:	:tada:  Enjoy	:tada: 	:tada: 	:tada:
+
+
+# 	:tada:	:tada:	:tada:  Done :) 	:tada: 	:tada: 	:tada:
