@@ -16,7 +16,7 @@ Flask
 Requests
 
 
-### Getting started
+### Getting started - locally
 1. Clone the repository:
 `git clone https://github.com/WeraGitHub/bits_please_project.git`
 
@@ -41,7 +41,7 @@ The current weather conditions and a five-day forecast will be displayed.
 
 
 # CI/CD
-### for video step by step tutorials go to the DevOps section of this web application
+### for video step by step tutorials go to the DevOps section of this web application when running, alternatively you can see the videos straight away in the static folder
 ## AWS, Jenkins and Docker
 
 ### AWS - create and connect to an EC2 instance
@@ -150,17 +150,23 @@ In Payload URL paste:
 
 http://*your-public-IP-here*:8080/github-webhook/ 
 
-In content type application/x-www-form…
+In content type drop down choose: *application/x-www-form-urlencoded*
+
+Select trigger option of *Just the push event.*
+
+And click *Add webhook*
+![image](https://user-images.githubusercontent.com/67145460/235289714-4d8fe2e8-6c86-43f5-b493-7fe8f4e49de2.png)
+
 
 
 
 #### If youre GitHub repo is private you need to create credentials in Jenkins – using ssh key and make sure you configure GitHub repo in a matching manner, before you start creating your Jenkins pipeline
 
 
+
 ### Create Pipeline in Jenkins
 Make sure you have downloaded 'Pyenv Pipeline' plugin in your Jenkins (https://plugins.jenkins.io/pyenv-pipeline)
-
-Create a scripted pipeline and paste your code:
+Your Jenkinsfile has this content:
 ```
 pipeline {
     agent any
@@ -214,6 +220,15 @@ pipeline {
     }
 }
 ```
+And now back in Jenkins:
+1. Create new item (job) - make it a pipeline
+2. Tick Build Trigger: *GitHub hook trigger for GITScm polling*
+3. In the Pipeline section: ![image](https://user-images.githubusercontent.com/67145460/235289498-9de3dee7-43bb-475b-8678-97f348edab00.png)
+4. Click *Apply* then *Save*
+5. *Build Now*
+![image](https://user-images.githubusercontent.com/67145460/235289597-58ebbb0f-acec-40ad-90b9-199b96bcb724.png)
+
+Our web app should be now available on http://*your-public-IP-here*:5000 
 
 
 
