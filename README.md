@@ -3,6 +3,10 @@
 #### This is a Flask web application that uses the OpenWeather API to display weather forecasts for cities around the world.
 
 
+https://user-images.githubusercontent.com/67145460/235312887-e865e265-3621-4179-96c9-a6396aef2669.mp4
+
+
+
 ### Features
 Users can search for weather forecasts by city name. The application displays the current weather conditions, as well as a five-day forecast
 The application uses the OpenWeather API to retrieve weather data.
