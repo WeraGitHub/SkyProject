@@ -7,10 +7,11 @@ import requests
 
 from application.person import Person
 
-# Define global variables
-WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', 'default_key')
-# print(WEATHER_API_KEY)
-# WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
+# Define global variables - this would be done if we have our API key kept as a secret and passed to us during
+# execution of Jenkinsfile in the docker run command
+# WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', 'default_key')
+
+WEATHER_API_KEY = '03cf0108f3a426eceaf55fd80047b8ef'
 
 
 @app.route('/')
