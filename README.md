@@ -171,7 +171,7 @@ And click *Add webhook*
 
 
 
-#### If youre GitHub repo is private you need to create credentials in Jenkins – using ssh key and make sure you configure GitHub repo in a matching manner, before you start creating your Jenkins pipeline
+#### If your GitHub repo is private you need to create credentials in Jenkins – using ssh key and make sure you configure GitHub repo in a matching manner, before you start creating your Jenkins pipeline
 
 
 
