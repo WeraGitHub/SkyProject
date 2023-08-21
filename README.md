@@ -33,6 +33,10 @@ Requests
 3. Install the required packages:
 `pip install -r requirements.txt`
 
+    use pip3 on Mac: `pip3 install -r requirements.txt` 
+
+
+
 4. Once you have your OpenWeather API key, paste it in the routes.py file - line 14
     `WEATHER_API_KEY = 'your key here!'`
 
